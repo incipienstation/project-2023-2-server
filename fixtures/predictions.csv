@@ -1,4 +1,4 @@
-station,timestamp,quality_score,fortune_score,level
+station,timestamp,quality,luck,quantity
 강원도 평창군,2024-03-01,3,평,13.646750450134277
 강원도 평창군,2024-06-01,4,평,13.648031234741211
 강원도 평창군,2024-09-01,3,평,13.648161888122559
