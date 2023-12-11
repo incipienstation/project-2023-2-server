@@ -37,10 +37,6 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
-CORS_ORIGIN_WHITELIST = [
-    "https://web-client-2cev92alq0xdlpb.sel4.cloudtype.app/"
-]
-
 CORS_ORIGIN_ALLOW_ALL = True
 
 CORS_ALLOW_CREDENTIALS = True
