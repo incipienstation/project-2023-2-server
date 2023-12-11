@@ -7,7 +7,7 @@ from stations.models import Station, Prediction
 
 
 class Command(BaseCommand):
-    help = 'Populate database with sample static'
+    help = 'Populate database with sample csv files'
 
     def read_csv_file(self, filename):
         with open(filename, 'r', encoding='utf-8') as file:
@@ -42,15 +42,14 @@ class Command(BaseCommand):
                 Prediction.objects.create(
                     station=station,
                     timestamp=timestamp,
-                    # quantity=prediction_data.get('quantity'), # for debugging
-                    quantity=0,
+                    quantity=prediction_data.get('quantity'),
                     quality=prediction_data.get('quality'),
                     luck=prediction_data.get('luck')
                 )
 
     def handle(self, *args, **options):
-        stations_filename = options.get('stations_file', 'static/stations_final.csv')
-        predictions_filename = options.get('predictions_file', 'static/predictions_final.csv')
+        stations_filename = options.get('stations_file', 'static/stations.csv')
+        predictions_filename = options.get('predictions_file', 'static/predictions.csv')
 
         stations_data = self.read_csv_file(stations_filename)
         predictions_data = self.read_csv_file(predictions_filename)
