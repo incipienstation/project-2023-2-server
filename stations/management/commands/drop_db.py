@@ -10,6 +10,6 @@ class Command(BaseCommand):
         try:
             Station.objects.all().delete()
             Prediction.objects.all().delete()  # just in case
-            self.stdout.write(self.style.SUCCESS('Successfully deleted all Station instances'))
+            self.stdout.write(self.style.SUCCESS('Successfully dropped the database'))
         except Exception as e:
             self.stdout.write(self.style.ERROR(f'An error occurred: {e}'))
